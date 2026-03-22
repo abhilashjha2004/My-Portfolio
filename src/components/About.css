@@ -1,0 +1,83 @@
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 3rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+  color: var(--text-primary);
+}
+
+.download-btn {
+  margin-top: 1rem;
+}
+
+.about-image-container {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.about-image-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.4) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: 1;
+}
+
+.about-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  box-shadow: var(--neon-glow);
+  position: relative;
+  overflow: hidden;
+  animation: toggleFloat 3s ease-in-out infinite alternate;
+}
+
+.floating-boy {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52.8% top;
+  transform: scale(1.48) translateY(2%);
+}
+
+@keyframes toggleFloat {
+  0% {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateY(10px) rotate(2deg);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .about-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem;
+  }
+}

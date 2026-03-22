@@ -1,0 +1,118 @@
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 2rem;
+}
+
+.tree-root {
+  text-align: center;
+  padding: 1rem 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+}
+
+.tree-root::after {
+  content: '';
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 3rem;
+  background: linear-gradient(to bottom, var(--accent-blue), transparent);
+}
+
+.tree-branches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  width: 100%;
+}
+
+.tree-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.branch-category {
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-color: var(--accent-purple);
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.branch-category::before {
+  content: '';
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 3rem;
+  background: linear-gradient(to bottom, transparent, var(--accent-purple));
+}
+
+.branch-category::after {
+  content: '';
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 2rem;
+  background: var(--accent-purple);
+}
+
+.branch-leaves {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  position: relative;
+  padding-top: 1rem;
+}
+
+.branch-leaves::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: var(--accent-purple);
+}
+
+.leaf-node {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.leaf-node::before {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 1rem;
+  background: var(--accent-purple);
+}
+
+.leaf-node:hover {
+  border-color: var(--accent-blue);
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .tree-branches {
+    grid-template-columns: 1fr;
+  }
+}
