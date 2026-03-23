@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { SiLeetcode } from 'react-icons/si';
+import { SiLeetcode, SiGeeksforgeeks, SiHackerrank } from 'react-icons/si';
 import './Contact.css';
 
 const Contact = () => {
@@ -65,6 +65,14 @@ const Contact = () => {
             <a href="https://leetcode.com/u/abhilashjha2004/" target="_blank" rel="noopener noreferrer" className="info-item">
               <SiLeetcode className="info-icon" />
               <span>leetcode.com/u/abhilashjha2004</span>
+            </a>
+            <a href="https://www.geeksforgeeks.org/profile/abhilashjha2004?tab=activity" target="_blank" rel="noopener noreferrer" className="info-item">
+              <SiGeeksforgeeks className="info-icon" />
+              <span>geeksforgeeks.org/abhilashjha2004</span>
+            </a>
+            <a href="https://www.hackerrank.com/profile/abhilashjha2004" target="_blank" rel="noopener noreferrer" className="info-item">
+              <SiHackerrank className="info-icon" />
+              <span>hackerrank.com/abhilashjha2004</span>
             </a>
           </div>
         </div>

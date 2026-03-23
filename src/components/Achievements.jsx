@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Achievements.css';
 
-const Counter = ({ end, label, suffix = "+" }) => {
+const Counter = ({ end, label, suffix = "+", url }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
 
@@ -31,10 +31,12 @@ const Counter = ({ end, label, suffix = "+" }) => {
   }, [end]);
 
   return (
-    <div className="achievement-card glass-card" ref={ref}>
-      <h3 className="counter-number gradient-text">{count}{suffix}</h3>
-      <p className="counter-label">{label}</p>
-    </div>
+    <a href={url} target="_blank" rel="noopener noreferrer" className="achievement-link">
+      <div className="achievement-card glass-card" ref={ref}>
+        <h3 className="counter-number gradient-text">{count}{suffix}</h3>
+        <p className="counter-label">{label}</p>
+      </div>
+    </a>
   );
 };
 
@@ -43,16 +45,23 @@ const Achievements = () => {
     <section id="achievements" className="achievements-section">
       <h2 className="section-title gradient-text">Achievements</h2>
       <div className="achievements-grid">
-        <Counter end={200} label="LeetCode Problems Solved" />
-        <Counter end={100} label="GeeksforGeeks Problems" />
-        <div className="achievement-card glass-card">
-          <h3 className="counter-number gradient-text">100 Days</h3>
-          <p className="counter-label">Badge on LeetCode</p>
-        </div>
-        <div className="achievement-card glass-card">
-          <h3 className="counter-number gradient-text">5★</h3>
-          <p className="counter-label">C++, Python & SQL (HackerRank)</p>
-        </div>
+        <Counter
+          end={200}
+          label="LeetCode Problems Solved + 4 Badges Earned"
+          url="https://leetcode.com/u/abhilashjha2004/"
+        />
+        <Counter
+          end={100}
+          label="GeeksforGeeks Problems Solved"
+          url="https://www.geeksforgeeks.org/profile/abhilashjha2004?tab=activity"
+        />
+
+        <a href="https://www.hackerrank.com/profile/abhilashjha2004" target="_blank" rel="noopener noreferrer" className="achievement-link">
+          <div className="achievement-card glass-card">
+            <h3 className="counter-number gradient-text">3★</h3>
+            <p className="counter-label">C++, Python & SQL (HackerRank)</p>
+          </div>
+        </a>
       </div>
     </section>
   );
